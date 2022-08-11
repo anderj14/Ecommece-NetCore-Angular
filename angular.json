@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "84e58c72-2446-4dd4-b6f8-d37dfd551120"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -28,6 +31,9 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "./node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -69,7 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "client:build:production"
+              "browserTarget": "client:build:production",
+              "sslKey": "./ssl/server.key",
+              "sslCert": "./ssl/server.crt",
+              "ssl": true
             },
             "development": {
               "browserTarget": "client:build:development"
