@@ -1,0 +1,23 @@
+.img{
+  height: 400px;
+}
+
+.img.one{
+  background: url(https://blog.talech.com/wp-content/uploads/2020/01/shutterstock_466589549.jpg);
+  background-position:center center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.img.two{
+  background: url(https://res.cloudinary.com/sagacity/image/upload/c_crop,h_2800,w_4200,x_0,y_0/c_limit,dpr_auto,f_auto,fl_lossy,q_80,w_1080/abejas-2_sycdc6.jpg);
+  background-position:center center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.img.three{
+  background: url(https://img2023.weyesimg.com/uploads/ouyeedisplays.allweyes.com/images/15350807164684.jpg?imageView2/2/w/1920/q/75);
+  background-position:center center ;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
