@@ -8,6 +8,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { ShopModule } from './shop/shop.module';
 import { CarouselComponent } from './carousel/carousel.component';
 import { CoreModule } from './core/core.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -20,8 +21,8 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ShopModule,
-    CoreModule
+    CoreModule,
+    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
