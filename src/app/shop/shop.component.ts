@@ -2,7 +2,7 @@ import { Component, ElementRef, OnInit, Output, ViewChild } from '@angular/core'
 import { IBrand } from '../shared/models/brand';
 import { IPagination } from '../shared/models/Pagination';
 import { IProduct } from '../shared/models/product';
-import { IType } from '../shared/models/productType';
+import { ICategory } from '../shared/models/category';
 import { ShopParams } from '../shared/models/shopParams';
 import { ShopService } from './shop.service';
 
@@ -16,7 +16,7 @@ export class ShopComponent implements OnInit {
 
   products!: IProduct[];
   brands!: IBrand[];
-  types!: IType[];
+  categories!: ICategory[];
   shopParams = new ShopParams();
   totalCount!: number;
 
@@ -55,7 +55,7 @@ export class ShopComponent implements OnInit {
 
   getTypes(){
     this.shopService.getTypes().subscribe(response => {
-      this.types = [{id: 0, name: 'All'}, ...response];
+      this.categories = [{id: 0, name: 'All'}, ...response];
     }, error => {
       console.log(error);
     });
@@ -67,8 +67,8 @@ export class ShopComponent implements OnInit {
     this.getProducts();
   }
 
-  onTypeSelected(typeId: number){
-    this.shopParams.typeId = typeId;
+  onCategorySelected(categoryId: number){
+    this.shopParams.categoryId = categoryId;
     this.shopParams.pageNumber = 1;
     this.getProducts();
   }

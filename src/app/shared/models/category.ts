@@ -1,4 +1,4 @@
-export interface IType{
+export interface ICategory{
     id: number;
     name: string;
 }

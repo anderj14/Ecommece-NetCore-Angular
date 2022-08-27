@@ -24,7 +24,7 @@ export class AccountService {
     let headers = new HttpHeaders();
     headers = headers.set('Authorization', `Bearer ${token}`);
 
-    return this.http.get(this.baseUrl + 'account', {headers}).pipe(
+    return this.http.get(this.baseUrl + 'user', {headers}).pipe(
       map((user: IUser) => {
         if(user){
           localStorage.setItem('token', user.token);
@@ -35,7 +35,7 @@ export class AccountService {
   }
 
   login(values: any){
-    return this.http.post(this.baseUrl + 'account/login', values).pipe(
+    return this.http.post(this.baseUrl + 'user/login', values).pipe(
       map((user: IUser) => {
         if(user){
           localStorage.setItem('token', user.token);
@@ -46,7 +46,7 @@ export class AccountService {
   }
 
   register(values: any){
-    return this.http.post(this.baseUrl + 'account/register', values).pipe(
+    return this.http.post(this.baseUrl + 'user/register', values).pipe(
       map((user: IUser) => {
         if(user){
           localStorage.setItem('token', user.token);
@@ -63,7 +63,7 @@ export class AccountService {
   }
 
   checkEmailExists(email: string){
-    return this.http.get(this.baseUrl + 'account/emailexists?email=' + email);
+    return this.http.get(this.baseUrl + 'user/emailvalid?email=' + email);
   }
 
 

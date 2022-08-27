@@ -1,7 +1,7 @@
 <div class="container mt-5">
   <div class="row">
     <section class="col-3">
-      <ng-container *ngIf="types && brands">
+      <ng-container *ngIf="categories && brands">
         <h5 class="text-warning ml-3 mt-3 mb-4">Sort</h5>
         <select
           class="custom-select mb-4"
@@ -28,16 +28,16 @@
             {{ brand.name }}
           </li>
         </ul>
-        <h5 class="text-warning ml-3">Types</h5>
+        <h5 class="text-warning ml-3">Category</h5>
         <ul class="list-group my-3">
           <li
             class="list-group-item"
-            *ngFor="let type of types"
-            [class.active]="type.id === shopParams.typeId"
-            [value]="type.id"
-            (click)="onTypeSelected(type.id)"
+            *ngFor="let category of categories"
+            [class.active]="category.id === shopParams.categoryId"
+            [value]="category.id"
+            (click)="onCategorySelected(category.id)"
           >
-            {{ type.name }}
+            {{ category.name }}
           </li>
         </ul>
       </ng-container>

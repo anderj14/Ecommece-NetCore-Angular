@@ -28,8 +28,8 @@ export class ProductDetailsComponent implements OnInit {
     this.loadProduct();
   }
 
-  addItemToBasket(){
-    this.basketService.addItemToBasket(this.product, this.quantity);
+  addItemToShoppingCart(){
+    this.basketService.addItemToShoppingCart(this.product, this.quantity);
   }
 
   incrementQuantity(){

@@ -34,16 +34,16 @@
                     <th scope="row">
                       <div class="p-2">
                         <img
-                          src="{{ item.pictureUrl }}"
-                          alt="{{ item.ProductName }}"
+                          src="{{ item.image }}"
+                          alt="{{ item.product }}"
                           class="img-fluid"
                           style="width: 50px;"
                         />
                         <div class="ml-3 d-inline-block align-middle">
                           <h5 class="mb-0">
-                            <a routerLink="/shop/{{item.id}}" class="text-dark">{{item.productName}}</a>
+                            <a routerLink="/shop/{{item.id}}" class="text-dark">{{item.product}}</a>
                           </h5>
-                          <span class="text-muted font-weight-normal font-italic d-block">Type: {{item.type}}</span>
+                          <span class="text-muted font-weight-normal font-italic d-block">Name: {{item.product}}</span>
                         </div>
                       </div>
                     </th>
@@ -51,11 +51,11 @@
                     <td class="align-middle">
                       <div class="d-flex align-items-center">
                         <i (click)="decrementItemQuantity(item)" class="fa fa-minus-circle text-warning mr-2" style="cursor: pointer; font-size: 2em;"></i>
-                        <span class="font-weight-bold" style="font-size: 1.5em;">{{item.quantity}}</span>
+                        <span class="font-weight-bold" style="font-size: 1.5em;">{{item.amount}}</span>
                         <i (click)="incrementItemQuantity(item)" class="fa fa-plus-circle text-warning mx-2" style="cursor: pointer; font-size: 2em;"></i>
                       </div>
                     </td>
-                    <td class="align-middle"><strong>{{item.price * item.quantity | currency}}</strong></td>
+                    <td class="align-middle"><strong>{{item.price * item.amount | currency}}</strong></td>
                     <td class="align-middle text-center">
                       <a class="text-danger">
                         <i (click)="removeBasketItem(item)" class="fa fa-trash" style="font-size: 2em; cursor: pointer;"></i>
